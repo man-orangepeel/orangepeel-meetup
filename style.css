@@ -12,7 +12,7 @@
   --bg-dark2:   #111111;
   --text:       #111111;
   --text-mid:   #555555;
-  --text-dim:   #999999;
+  --text-dim:   #767676;
   --text-inv:   #ffffff;
   --border:     #e8e8e8;
   --border-drk: rgba(255,255,255,0.10);
@@ -186,10 +186,10 @@ nav {
    HERO — fond blanc, titre noir
    ===================== */
 .hero {
-  min-height: 100vh;
+  min-height: calc(100vh - 3rem);
   display: flex;
   align-items: center;
-  padding: 10rem 2.5rem 3rem;
+  padding: 7rem 2.5rem 3rem;
   background: linear-gradient(160deg, #fdf7ef 0%, #ffffff 60%);
 }
 .hero-inner {
@@ -224,8 +224,9 @@ nav {
    INFO BAR — bande pratique sous le hero
    ===================== */
 .info-bar {
-  background: #1c1c1c;
-  border-bottom: 1px solid #2a2a2a;
+  background: var(--bg-light);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 .info-bar-inner {
   max-width: 1080px;
@@ -246,13 +247,13 @@ nav {
 .ib-text {
   font-size: 0.82rem;
   font-weight: 400;
-  color: rgba(255,255,255,0.60);
+  color: var(--text-mid);
   white-space: nowrap;
 }
 .ib-link {
   font-size: 0.82rem;
-  font-weight: 500;
-  color: #f7931a;
+  font-weight: 600;
+  color: var(--orange);
   white-space: nowrap;
   transition: opacity 0.2s;
 }
@@ -260,13 +261,13 @@ nav {
 .ib-sep {
   width: 1px;
   height: 1.2rem;
-  background: rgba(255,255,255,0.12);
+  background: var(--border);
   margin: 0 1.5rem;
   flex-shrink: 0;
 }
 
 /* =====================
-   POUR QUI — gris clair, cards NOIRES comme wear
+   POUR QUI
    ===================== */
 .pourqui {
   background: var(--bg-light);
@@ -280,22 +281,21 @@ nav {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1rem;
-  border-radius: var(--radius);
-  overflow: hidden;
 }
 .pq-card {
-  background: #1c1c1c;
+  background: var(--bg);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 2.2rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 0;
-  transition: background 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
-.pq-card:hover { background: #242424; }
+.pq-card:hover { border-color: #ddd5c8; box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
 .pq-icon { font-size: 1.4rem; margin-bottom: 1.2rem; }
-.pq-card h3 { color: var(--text-inv); margin-bottom: 0.6rem; font-size: 1.05rem; }
-.pq-card p  { color: rgba(255,255,255,0.55); font-size: 0.88rem; line-height: 1.68; font-weight: 300; }
+.pq-card h3 { color: var(--text); margin-bottom: 0.6rem; font-size: 1.05rem; }
+.pq-card p  { color: var(--text-mid); font-size: 0.88rem; line-height: 1.68; font-weight: 300; }
 
 /* =====================
    PROGRAMME — blanc
@@ -307,6 +307,7 @@ nav {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
+  background: var(--bg-light);
 }
 .prog-item {
   display: flex;
@@ -314,11 +315,11 @@ nav {
   gap: 2rem;
   padding: 2rem 2.4rem;
   border-bottom: 1px solid var(--border);
-  background: var(--bg);
-  transition: background 0.18s;
+  background: var(--bg-light);
+  transition: background 0.18s, box-shadow 0.18s;
 }
 .prog-item:last-child { border-bottom: none; }
-.prog-item:hover { background: var(--bg-light); }
+.prog-item:hover { background: var(--bg); box-shadow: inset 3px 0 0 var(--orange); }
 
 .prog-num {
   font-size: 0.70rem;
@@ -374,7 +375,7 @@ nav {
   cursor: pointer;
 }
 .res-item:last-child { border-bottom: none; }
-.res-item:hover { background: #fff8f0; }
+.res-item:hover { background: #fff8f0; box-shadow: inset 3px 0 0 var(--orange); }
 .ri-body  { display: flex; flex-direction: column; gap: 0.1rem; flex: 1; }
 .ri-title { font-size: 0.88rem; font-weight: 500; color: var(--text); }
 .ri-desc  { font-size: 0.75rem; color: var(--text-dim); font-weight: 300; }
@@ -406,8 +407,8 @@ nav {
   margin-top: 3rem;
 }
 .person-card {
-  background: #fdf8f3;
-  border: 1px solid #ede8e0;
+  background: var(--bg-light);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1.8rem;
   display: flex;
@@ -457,7 +458,7 @@ nav {
 }
 .cta-inner h2 { color: var(--text-inv); margin-bottom: 1rem; }
 .cta-inner > p {
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.70);
   font-size: 1rem;
   line-height: 1.7;
   margin-bottom: 2.4rem;
@@ -472,7 +473,7 @@ nav {
 }
 .cta-adresse {
   font-size: 0.78rem;
-  color: rgba(255,255,255,0.28);
+  color: rgba(255,255,255,0.45);
   margin-top: 0.5rem;
 }
 
@@ -504,13 +505,16 @@ footer {
 .footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
 .footer-links a {
   font-size: 0.80rem;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.50);
   transition: color 0.2s;
+  display: flex;
+  align-items: center;
 }
-.footer-links a:hover { color: rgba(255,255,255,0.70); }
+.footer-links a:hover { color: rgba(255,255,255,0.80); }
+.footer-links a svg { display: block; }
 .footer-copy {
   font-size: 0.74rem;
-  color: rgba(255,255,255,0.20);
+  color: rgba(255,255,255,0.35);
   width: 100%;
   padding-top: 1rem;
   border-top: 1px solid rgba(255,255,255,0.06);
@@ -531,7 +535,7 @@ footer {
   nav { padding: 1rem 1.2rem; }
   .nav-links a:not(.btn-nav) { display: none; }
 
-  .hero { padding: 8rem 1.2rem 4rem; }
+  .hero { padding: 6rem 1.2rem 2rem; }
   .info-bar-inner { flex-direction: column; align-items: flex-start; gap: 0; }
   .ib-sep { display: none; }
   .ib-item { padding: 0.5rem 0; }
