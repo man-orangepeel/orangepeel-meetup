@@ -468,9 +468,22 @@ nav {
   display: flex;
   gap: 1rem;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   margin-bottom: 1.6rem;
 }
+.cta-actions .btn-primary,
+.cta-actions .btn-outline-inv {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem;
+  border-radius: 50%;
+  width: 3.2rem;
+  height: 3.2rem;
+}
+.cta-actions .btn-primary svg,
+.cta-actions .btn-outline-inv svg { display: block; }
 .cta-adresse {
   font-size: 0.78rem;
   color: rgba(255,255,255,0.45);
