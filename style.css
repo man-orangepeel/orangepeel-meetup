@@ -189,22 +189,13 @@ nav {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 10rem 2.5rem 6rem;
+  padding: 10rem 2.5rem 3rem;
   background: linear-gradient(160deg, #fdf7ef 0%, #ffffff 60%);
 }
 .hero-inner {
   max-width: var(--max-w);
   margin: 0 auto;
   width: 100%;
-}
-.hero-eyebrow {
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-dim);
-  margin-bottom: 1.8rem;
-  animation: fadeUp 0.5s ease both;
 }
 .hero-inner h1 {
   max-width: 820px;
@@ -229,33 +220,50 @@ nav {
   animation: fadeUp 0.5s 0.24s ease both;
 }
 
-/* bande info sous hero */
-.hero-meta {
+/* =====================
+   INFO BAR — bande pratique sous le hero
+   ===================== */
+.info-bar {
+  background: #1c1c1c;
+  border-bottom: 1px solid #2a2a2a;
+}
+.info-bar-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 2rem;
   display: flex;
-  align-items: stretch;
-  margin-top: 5rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  max-width: 580px;
-  animation: fadeUp 0.5s 0.32s ease both;
+  align-items: center;
+  flex-wrap: wrap;
 }
-.hm-item {
+.ib-item {
   display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  padding: 1.1rem 1.5rem;
-  flex: 1;
-  background: var(--bg-light);
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0;
+  flex-shrink: 0;
 }
-.hm-sep { width: 1px; background: var(--border); flex-shrink: 0; }
-.hm-val {
-  font-family: var(--font-head);
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--text);
+.ib-icon { font-size: 0.85rem; }
+.ib-text {
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.60);
+  white-space: nowrap;
 }
-.hm-label { font-size: 0.72rem; color: var(--text-dim); line-height: 1.4; }
+.ib-link {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #f7931a;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+.ib-link:hover { opacity: 0.75; }
+.ib-sep {
+  width: 1px;
+  height: 1.2rem;
+  background: rgba(255,255,255,0.12);
+  margin: 0 1.5rem;
+  flex-shrink: 0;
+}
 
 /* =====================
    POUR QUI — gris clair, cards NOIRES comme wear
@@ -524,8 +532,9 @@ footer {
   .nav-links a:not(.btn-nav) { display: none; }
 
   .hero { padding: 8rem 1.2rem 4rem; }
-  .hero-meta { flex-direction: column; max-width: 100%; }
-  .hm-sep { width: auto; height: 1px; }
+  .info-bar-inner { flex-direction: column; align-items: flex-start; gap: 0; }
+  .ib-sep { display: none; }
+  .ib-item { padding: 0.5rem 0; }
 
   .pourqui,
   .programme,
