@@ -221,6 +221,34 @@ nav {
 }
 
 /* =====================
+   HERO NEXT — bloc date prochain meetup
+   ===================== */
+.hero-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2.8rem;
+  padding: 0.8rem 1.2rem;
+  border-left: 3px solid var(--orange);
+  background: rgba(247,147,26,0.06);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  animation: fadeUp 0.5s 0.32s ease both;
+}
+.hero-next-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange);
+  white-space: nowrap;
+}
+.hero-next-date {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* =====================
    INFO BAR — bande pratique sous le hero
    ===================== */
 .info-bar {
